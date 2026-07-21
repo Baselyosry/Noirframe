@@ -19,3 +19,7 @@ Supervisors can view a simple count of requests by status.
 ## R5
 
 The first release does not include email notifications, customer accounts, file attachments, or automated assignment.
+
+## R6
+
+Supervisors can export the status summary as a CSV file.

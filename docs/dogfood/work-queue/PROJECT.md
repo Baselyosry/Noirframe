@@ -56,6 +56,10 @@ Supervisors can view counts of requests grouped by status. Source: RQ-004.
 
 The first release excludes email notifications, customer accounts, file attachments, and automated assignment. Source: RQ-005.
 
+### FEAT-004: Status Summary Export
+
+Supervisors can export the status summary as a CSV file. Source: RQ-006.
+
 ## Domain Concepts
 
 - Request: an incoming support work item.

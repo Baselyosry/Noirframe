@@ -8,11 +8,17 @@ source_requirements: [<Requirement: RQ-001>]
 
 # Business Rules
 
+## Applicability
+
+<Applicable because: RQ-* or upstream evidence; otherwise Not Applicable — evidence: RQ-* or upstream evidence>
+
 ## <Domain or Flow>
 ### Purpose
 <Purpose>
 ### Rules
 - BR-001: <Rule>
+### Sources
+<RQ-* and FEAT-*>
 ### Permissions
 <Supported permission rule or Not Applicable>
 ### Lifecycle and State Changes

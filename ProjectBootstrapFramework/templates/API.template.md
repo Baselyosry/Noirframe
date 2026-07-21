@@ -8,12 +8,18 @@ source_requirements: [<Requirement: RQ-001>]
 
 # API
 
+## Applicability
+
+<Applicable because: RQ-* or upstream evidence; otherwise Not Applicable — evidence: RQ-* or upstream evidence>
+
 ## API Philosophy
 <Contract scope>
 
 ## API-001: <Resource or Contract>
 ### Consumer Behavior
 <Supported interaction>
+### Sources
+<RQ-* and applicable upstream IDs>
 ### Request and Response
 <Supported contract>
 ### Errors and Compatibility

@@ -8,9 +8,15 @@ source_requirements: [<Requirement: RQ-001>]
 
 # Implementation Reference
 
+## Applicability
+
+<Applicable because: RQ-* or upstream evidence; otherwise Not Applicable — evidence: RQ-* or upstream evidence>
+
 ## REF-001: <Pattern>
 ### Intent
 <Intent>
+### Sources
+<RQ-* and applicable upstream IDs>
 ### When to Use
 <Evidence-backed applicability>
 ### Construction and Boundaries

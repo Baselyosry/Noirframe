@@ -14,9 +14,13 @@
 
 ## Quality Review Findings
 
-| Severity | Finding | Affected ID | Repair | Status |
-|---|---|---|---|---|
-| <Severity> | <Finding> | <ID> | <Action> | <Status> |
+| Severity | Finding | Evidence | Affected canonical ID | Repair allowed without new fact? | Required action |
+|---|---|---|---|---|---|
+| <Severity> | <Finding> | <section or ID> | <ID or N/A> | yes/no | <repair or blocking question> |
+
+## Repairs and Revalidation
+
+<One permitted repair/re-review pass, affected IDs, and revalidation result; otherwise None>
 
 ## Blocking Questions
 

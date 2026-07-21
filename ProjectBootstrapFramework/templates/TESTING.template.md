@@ -17,5 +17,4 @@ source_requirements: [<Requirement: RQ-001>]
 ### Behavior to Verify
 <Observable outcome>
 ### Cases
-- <Happy path>
-- <Failure or edge case>
+- <One or more evidence-supported cases; include failure or edge cases only when established by source IDs>

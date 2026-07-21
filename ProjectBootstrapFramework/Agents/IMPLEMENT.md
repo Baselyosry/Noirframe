@@ -1,3 +1,12 @@
+---
+agent_id: IMPLEMENT
+agent_layer_version: 1.0
+framework_version: 1.0.0
+---
+
 # Implement Agent Instructions
 
-Read `PROJECT.md`, `BUSINESS_RULES.md`, `API.md`, `REFERENCE.md`, and `FEATURE_CHECKLIST.md` before implementation. Follow the canonical owner for each claim, record uncertainty, and use the checklist and validation report before completing work.
+Read applicable `PROJECT.md`, `BUSINESS_RULES.md`, `DECISIONS.md`, `API.md`,
+`REFERENCE.md`, `TESTING.md`, `FEATURE_CHECKLIST.md`, and `TRACEABILITY.md`
+before implementation. Follow the canonical owner for each claim, record
+uncertainty, and use the current validation report before completing work.

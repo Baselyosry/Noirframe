@@ -10,9 +10,9 @@ source_requirements: []
 
 ## Requirement Register
 
-| ID | Source locator | Status | Summary |
-|---|---|---|---|
-| RQ-001 | <Source locator> | confirmed | <Requirement summary> |
+| ID | Source locator | Status | Affected canonical IDs | Summary |
+|---|---|---|---|---|
+| RQ-001 | <Source locator> | confirmed | <FEAT-* or N/A> | <Requirement summary> |
 
 ## Relationships
 
