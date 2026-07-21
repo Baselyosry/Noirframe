@@ -5,7 +5,7 @@
 - Requirements: `Requirements.md`
 - Generated document: `PROJECT.md`
 - Traceability: `TRACEABILITY.md`
-- Framework: `ProjectBootstrapFramework` 1.0.0
+- Framework: `NoirFrame` 1.0.0
 
 ## Mechanical Validation
 

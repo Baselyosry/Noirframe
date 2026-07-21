@@ -22,7 +22,7 @@ Put the source document in your new repository, for example:
 ```text
 my-project/
 ├── client-brief.pdf
-└── ProjectBootstrapFramework/
+└── NoirFrame/
 ```
 
 ### 2. Create an output folder
@@ -33,7 +33,7 @@ inside the framework folder.
 ```text
 my-project/
 ├── client-brief.pdf
-├── ProjectBootstrapFramework/
+├── NoirFrame/
 └── docs/
     └── knowledge-base/
 ```
@@ -43,7 +43,7 @@ my-project/
 Replace `<source-document>` with the path to your actual file:
 
 ```text
-Read ProjectBootstrapFramework/README.md, FRAMEWORK_SPEC.md,
+Read NoirFrame/README.md, FRAMEWORK_SPEC.md,
 FRAMEWORK_MANIFEST.md, PLACEHOLDER_SPEC.md, GENERATION_GUIDE.md, VALIDATION.md,
 all templates, and all prompts.
 

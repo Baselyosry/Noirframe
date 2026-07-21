@@ -4,7 +4,7 @@
 
 **Goal:** Build a domain-neutral documentation operating system that derives and maintains a project engineering knowledge base from requirements without inventing project facts.
 
-**Architecture:** The deliverable is a static `ProjectBootstrapFramework/` package with six normative Framework Core documents, non-normative golden-project analysis, generic templates, generation/review prompts, static agent instructions, and validation assets. Every generated project document follows one bounded lifecycle: intake → draft → mechanical validation → quality review → repair → mechanical revalidation → final output.
+**Architecture:** The deliverable is a static `NoirFrame/` package with six normative Framework Core documents, non-normative golden-project analysis, generic templates, generation/review prompts, static agent instructions, and validation assets. Every generated project document follows one bounded lifecycle: intake → draft → mechanical validation → quality review → repair → mechanical revalidation → final output.
 
 **Tech Stack:** Markdown, YAML front matter, repository-native validation commands (`git diff --check`, `rg`), no runtime dependencies or framework-specific code.
 
@@ -24,7 +24,7 @@
 ## Final V1 File Structure
 
 ```text
-ProjectBootstrapFramework/
+NoirFrame/
 ├── README.md
 ├── FRAMEWORK_SPEC.md
 ├── FRAMEWORK_MANIFEST.md
@@ -76,11 +76,11 @@ ProjectBootstrapFramework/
 ### Task 1: Establish Core Constitution, Versioning, and Golden-Project Evidence
 
 **Files:**
-- Create: `ProjectBootstrapFramework/FRAMEWORK_SPEC.md`
-- Create: `ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md`
-- Create: `ProjectBootstrapFramework/ANALYSIS.md`
-- Create: `ProjectBootstrapFramework/FRAMEWORK_EXTRACTION.md`
-- Test: `ProjectBootstrapFramework/FRAMEWORK_SPEC.md` and `ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md`
+- Create: `NoirFrame/FRAMEWORK_SPEC.md`
+- Create: `NoirFrame/FRAMEWORK_MANIFEST.md`
+- Create: `NoirFrame/ANALYSIS.md`
+- Create: `NoirFrame/FRAMEWORK_EXTRACTION.md`
+- Test: `NoirFrame/FRAMEWORK_SPEC.md` and `NoirFrame/FRAMEWORK_MANIFEST.md`
 
 **Interfaces:**
 - Consumes: `/Users/philosopher/Documents/Obsidian/TriStack/Dar-AL Funoon/MD Files For Better Agent/{AGENTS,PROJECT,BUSINESS_RULES,DECISIONS,API,REFERENCE,TESTING,FEATURE_CHECKLIST,PROMPTS}.md`
@@ -91,11 +91,11 @@ ProjectBootstrapFramework/
 Run:
 
 ```bash
-rg -q "^## Universal Generation Contract$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Document Review and Repair$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Assumption Contract$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Quality Gates$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^framework_version: 1.0.0$" "ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md"
+rg -q "^## Universal Generation Contract$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Document Review and Repair$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Assumption Contract$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Quality Gates$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^framework_version: 1.0.0$" "NoirFrame/FRAMEWORK_MANIFEST.md"
 ```
 
 Expected: fail because the Core documents do not exist.
@@ -161,12 +161,12 @@ Below it, define semantic-version compatibility: patch releases are compatible, 
 Run:
 
 ```bash
-rg -q "^## Universal Generation Contract$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Document Review and Repair$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Assumption Contract$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^## Quality Gates$" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" && \
-rg -q "^framework_version: 1.0.0$" "ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md" && \
-! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" "ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md"
+rg -q "^## Universal Generation Contract$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Document Review and Repair$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Assumption Contract$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^## Quality Gates$" "NoirFrame/FRAMEWORK_SPEC.md" && \
+rg -q "^framework_version: 1.0.0$" "NoirFrame/FRAMEWORK_MANIFEST.md" && \
+! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "NoirFrame/FRAMEWORK_SPEC.md" "NoirFrame/FRAMEWORK_MANIFEST.md"
 ```
 
 Expected: exit code `0`.
@@ -174,10 +174,10 @@ Expected: exit code `0`.
 ### Task 2: Define Placeholder Grammar, Generation/Regeneration Rules, and Validation Policy
 
 **Files:**
-- Create: `ProjectBootstrapFramework/PLACEHOLDER_SPEC.md`
-- Create: `ProjectBootstrapFramework/GENERATION_GUIDE.md`
-- Create: `ProjectBootstrapFramework/VALIDATION.md`
-- Create: `ProjectBootstrapFramework/validation/VALIDATION_REPORT.template.md`
+- Create: `NoirFrame/PLACEHOLDER_SPEC.md`
+- Create: `NoirFrame/GENERATION_GUIDE.md`
+- Create: `NoirFrame/VALIDATION.md`
+- Create: `NoirFrame/validation/VALIDATION_REPORT.template.md`
 - Test: the four files above
 
 **Interfaces:**
@@ -189,11 +189,11 @@ Expected: exit code `0`.
 Run:
 
 ```bash
-rg -q "^## Placeholder Syntax$" "ProjectBootstrapFramework/PLACEHOLDER_SPEC.md" && \
-rg -q "^## Requirement Intake$" "ProjectBootstrapFramework/GENERATION_GUIDE.md" && \
-rg -q "^## Dependency Edge List$" "ProjectBootstrapFramework/GENERATION_GUIDE.md" && \
-rg -q "^## Mechanical Validation$" "ProjectBootstrapFramework/VALIDATION.md" && \
-rg -q "^## Quality Review Findings$" "ProjectBootstrapFramework/validation/VALIDATION_REPORT.template.md"
+rg -q "^## Placeholder Syntax$" "NoirFrame/PLACEHOLDER_SPEC.md" && \
+rg -q "^## Requirement Intake$" "NoirFrame/GENERATION_GUIDE.md" && \
+rg -q "^## Dependency Edge List$" "NoirFrame/GENERATION_GUIDE.md" && \
+rg -q "^## Mechanical Validation$" "NoirFrame/VALIDATION.md" && \
+rg -q "^## Quality Review Findings$" "NoirFrame/validation/VALIDATION_REPORT.template.md"
 ```
 
 Expected: fail because these files do not exist.
@@ -266,12 +266,12 @@ Define quality review separately from mechanical validation. Quality findings us
 Run:
 
 ```bash
-rg -q "^## Placeholder Syntax$" "ProjectBootstrapFramework/PLACEHOLDER_SPEC.md" && \
-rg -q "^## Requirement Intake$" "ProjectBootstrapFramework/GENERATION_GUIDE.md" && \
-rg -q "^## Dependency Edge List$" "ProjectBootstrapFramework/GENERATION_GUIDE.md" && \
-rg -q "^## Mechanical Validation$" "ProjectBootstrapFramework/VALIDATION.md" && \
-rg -q "^## Quality Review Findings$" "ProjectBootstrapFramework/validation/VALIDATION_REPORT.template.md" && \
-! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "ProjectBootstrapFramework/PLACEHOLDER_SPEC.md" "ProjectBootstrapFramework/GENERATION_GUIDE.md" "ProjectBootstrapFramework/VALIDATION.md"
+rg -q "^## Placeholder Syntax$" "NoirFrame/PLACEHOLDER_SPEC.md" && \
+rg -q "^## Requirement Intake$" "NoirFrame/GENERATION_GUIDE.md" && \
+rg -q "^## Dependency Edge List$" "NoirFrame/GENERATION_GUIDE.md" && \
+rg -q "^## Mechanical Validation$" "NoirFrame/VALIDATION.md" && \
+rg -q "^## Quality Review Findings$" "NoirFrame/validation/VALIDATION_REPORT.template.md" && \
+! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "NoirFrame/PLACEHOLDER_SPEC.md" "NoirFrame/GENERATION_GUIDE.md" "NoirFrame/VALIDATION.md"
 ```
 
 Expected: exit code `0`.
@@ -279,14 +279,14 @@ Expected: exit code `0`.
 ### Task 3: Build the Eight Generic Project Knowledge-Base Templates
 
 **Files:**
-- Create: `ProjectBootstrapFramework/templates/PROJECT.template.md`
-- Create: `ProjectBootstrapFramework/templates/BUSINESS_RULES.template.md`
-- Create: `ProjectBootstrapFramework/templates/DECISIONS.template.md`
-- Create: `ProjectBootstrapFramework/templates/API.template.md`
-- Create: `ProjectBootstrapFramework/templates/REFERENCE.template.md`
-- Create: `ProjectBootstrapFramework/templates/TESTING.template.md`
-- Create: `ProjectBootstrapFramework/templates/FEATURE_CHECKLIST.template.md`
-- Create: `ProjectBootstrapFramework/templates/TRACEABILITY.template.md`
+- Create: `NoirFrame/templates/PROJECT.template.md`
+- Create: `NoirFrame/templates/BUSINESS_RULES.template.md`
+- Create: `NoirFrame/templates/DECISIONS.template.md`
+- Create: `NoirFrame/templates/API.template.md`
+- Create: `NoirFrame/templates/REFERENCE.template.md`
+- Create: `NoirFrame/templates/TESTING.template.md`
+- Create: `NoirFrame/templates/FEATURE_CHECKLIST.template.md`
+- Create: `NoirFrame/templates/TRACEABILITY.template.md`
 - Test: all eight templates
 
 **Interfaces:**
@@ -299,8 +299,8 @@ Run:
 
 ```bash
 for file in PROJECT BUSINESS_RULES DECISIONS API REFERENCE TESTING FEATURE_CHECKLIST TRACEABILITY; do
-  test -f "ProjectBootstrapFramework/templates/${file}.template.md" || exit 1
-  rg -q "^---$" "ProjectBootstrapFramework/templates/${file}.template.md" || exit 1
+  test -f "NoirFrame/templates/${file}.template.md" || exit 1
+  rg -q "^---$" "NoirFrame/templates/${file}.template.md" || exit 1
 done
 ```
 
@@ -347,9 +347,9 @@ Run:
 
 ```bash
 for file in PROJECT BUSINESS_RULES DECISIONS API REFERENCE TESTING FEATURE_CHECKLIST TRACEABILITY; do
-  rg -q "document_schema_version: 1.0" "ProjectBootstrapFramework/templates/${file}.template.md" || exit 1
+  rg -q "document_schema_version: 1.0" "NoirFrame/templates/${file}.template.md" || exit 1
 done
-! rg -i "museum\|booking\|hyperpay\|dar al-funoon\|content editor" "ProjectBootstrapFramework/templates"
+! rg -i "museum\|booking\|hyperpay\|dar al-funoon\|content editor" "NoirFrame/templates"
 ```
 
 Expected: exit code `0`.
@@ -357,16 +357,16 @@ Expected: exit code `0`.
 ### Task 4: Create Shared Generator Prompts and Per-Document Quality Review Prompts
 
 **Files:**
-- Create: `ProjectBootstrapFramework/prompts/GENERATION_PREAMBLE.md`
-- Create: `ProjectBootstrapFramework/prompts/01_generate_project.md`
-- Create: `ProjectBootstrapFramework/prompts/02_generate_business_rules.md`
-- Create: `ProjectBootstrapFramework/prompts/03_generate_decisions.md`
-- Create: `ProjectBootstrapFramework/prompts/04_generate_api.md`
-- Create: `ProjectBootstrapFramework/prompts/05_generate_reference.md`
-- Create: `ProjectBootstrapFramework/prompts/06_generate_testing.md`
-- Create: `ProjectBootstrapFramework/prompts/07_generate_feature_checklist.md`
-- Create: `ProjectBootstrapFramework/prompts/08_generate_traceability.md`
-- Create: `ProjectBootstrapFramework/prompts/reviews/{PROJECT,BUSINESS_RULES,DECISIONS,API,REFERENCE,TESTING,FEATURE_CHECKLIST,TRACEABILITY}.review.md`
+- Create: `NoirFrame/prompts/GENERATION_PREAMBLE.md`
+- Create: `NoirFrame/prompts/01_generate_project.md`
+- Create: `NoirFrame/prompts/02_generate_business_rules.md`
+- Create: `NoirFrame/prompts/03_generate_decisions.md`
+- Create: `NoirFrame/prompts/04_generate_api.md`
+- Create: `NoirFrame/prompts/05_generate_reference.md`
+- Create: `NoirFrame/prompts/06_generate_testing.md`
+- Create: `NoirFrame/prompts/07_generate_feature_checklist.md`
+- Create: `NoirFrame/prompts/08_generate_traceability.md`
+- Create: `NoirFrame/prompts/reviews/{PROJECT,BUSINESS_RULES,DECISIONS,API,REFERENCE,TESTING,FEATURE_CHECKLIST,TRACEABILITY}.review.md`
 - Test: all prompt files
 
 **Interfaces:**
@@ -378,9 +378,9 @@ Expected: exit code `0`.
 Run:
 
 ```bash
-test -f "ProjectBootstrapFramework/prompts/GENERATION_PREAMBLE.md" && \
-test "$(rg --files "ProjectBootstrapFramework/prompts" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
-test "$(rg --files "ProjectBootstrapFramework/prompts" -g "0*_generate_*.md" | wc -l | tr -d ' ')" = "8"
+test -f "NoirFrame/prompts/GENERATION_PREAMBLE.md" && \
+test "$(rg --files "NoirFrame/prompts" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
+test "$(rg --files "NoirFrame/prompts" -g "0*_generate_*.md" | wc -l | tr -d ' ')" = "8"
 ```
 
 Expected: fail because prompts do not exist.
@@ -445,11 +445,11 @@ TRACEABILITY: evidence-based edges without fabricated relationships.
 Run:
 
 ```bash
-rg -q "Universal Generation Contract" "ProjectBootstrapFramework/prompts/GENERATION_PREAMBLE.md" && \
-for file in ProjectBootstrapFramework/prompts/reviews/*.review.md; do
+rg -q "Universal Generation Contract" "NoirFrame/prompts/GENERATION_PREAMBLE.md" && \
+for file in NoirFrame/prompts/reviews/*.review.md; do
   rg -q "Repair allowed without new fact" "$file" || exit 1
 done && \
-! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "ProjectBootstrapFramework/prompts"
+! rg -i "museum\|booking\|hyperpay\|dar al-funoon" "NoirFrame/prompts"
 ```
 
 Expected: exit code `0`.
@@ -457,12 +457,12 @@ Expected: exit code `0`.
 ### Task 5: Build the Static, Tool-Neutral Agent Layer and Framework Onboarding
 
 **Files:**
-- Create: `ProjectBootstrapFramework/Agents/SYSTEM.md`
-- Create: `ProjectBootstrapFramework/Agents/IMPLEMENT.md`
-- Create: `ProjectBootstrapFramework/Agents/REVIEW.md`
-- Create: `ProjectBootstrapFramework/Agents/TEST.md`
-- Create: `ProjectBootstrapFramework/Agents/CHANGE.md`
-- Create: `ProjectBootstrapFramework/README.md`
+- Create: `NoirFrame/Agents/SYSTEM.md`
+- Create: `NoirFrame/Agents/IMPLEMENT.md`
+- Create: `NoirFrame/Agents/REVIEW.md`
+- Create: `NoirFrame/Agents/TEST.md`
+- Create: `NoirFrame/Agents/CHANGE.md`
+- Create: `NoirFrame/README.md`
 - Test: all agent files and README
 
 **Interfaces:**
@@ -475,9 +475,9 @@ Run:
 
 ```bash
 for file in SYSTEM IMPLEMENT REVIEW TEST CHANGE; do
-  test -f "ProjectBootstrapFramework/Agents/${file}.md" || exit 1
+  test -f "NoirFrame/Agents/${file}.md" || exit 1
 done
-rg -q "^## Bootstrap a New Project$" "ProjectBootstrapFramework/README.md"
+rg -q "^## Bootstrap a New Project$" "NoirFrame/README.md"
 ```
 
 Expected: fail because the Agent Layer and README do not exist.
@@ -513,10 +513,10 @@ Document the six Core files, eight generated knowledge-base documents, Agent Lay
 Run:
 
 ```bash
-rg -q "tool-neutral" "ProjectBootstrapFramework/Agents/SYSTEM.md" && \
-rg -q "one agent may modify a canonical artifact" "ProjectBootstrapFramework/Agents/IMPLEMENT.md" && \
-rg -q "^## Bootstrap a New Project$" "ProjectBootstrapFramework/README.md" && \
-! rg -i "cursor\|claude code\|museum\|booking\|hyperpay\|dar al-funoon" "ProjectBootstrapFramework/Agents" "ProjectBootstrapFramework/README.md"
+rg -q "tool-neutral" "NoirFrame/Agents/SYSTEM.md" && \
+rg -q "one agent may modify a canonical artifact" "NoirFrame/Agents/IMPLEMENT.md" && \
+rg -q "^## Bootstrap a New Project$" "NoirFrame/README.md" && \
+! rg -i "cursor\|claude code\|museum\|booking\|hyperpay\|dar al-funoon" "NoirFrame/Agents" "NoirFrame/README.md"
 ```
 
 Expected: exit code `0`.
@@ -524,9 +524,9 @@ Expected: exit code `0`.
 ### Task 6: Freeze V1 and Run Repository-Level Quality Review
 
 **Files:**
-- Modify: `ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md`
-- Create: `ProjectBootstrapFramework/validation/VALIDATION_REPORT.md`
-- Test: all files under `ProjectBootstrapFramework/`
+- Modify: `NoirFrame/FRAMEWORK_MANIFEST.md`
+- Create: `NoirFrame/validation/VALIDATION_REPORT.md`
+- Test: all files under `NoirFrame/`
 
 **Interfaces:**
 - Consumes: every framework file from Tasks 1–5.
@@ -537,10 +537,10 @@ Expected: exit code `0`.
 Run:
 
 ```bash
-test "$(rg --files "ProjectBootstrapFramework/templates" -g "*.template.md" | wc -l | tr -d ' ')" = "8" && \
-test "$(rg --files "ProjectBootstrapFramework/prompts/reviews" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
-test "$(rg --files "ProjectBootstrapFramework/Agents" -g "*.md" | wc -l | tr -d ' ')" = "5" && \
-test -f "ProjectBootstrapFramework/validation/VALIDATION_REPORT.md"
+test "$(rg --files "NoirFrame/templates" -g "*.template.md" | wc -l | tr -d ' ')" = "8" && \
+test "$(rg --files "NoirFrame/prompts/reviews" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
+test "$(rg --files "NoirFrame/Agents" -g "*.md" | wc -l | tr -d ' ')" = "5" && \
+test -f "NoirFrame/validation/VALIDATION_REPORT.md"
 ```
 
 Expected: fail until the report exists.
@@ -580,20 +580,20 @@ Run:
 
 ```bash
 git diff --check && \
-test "$(rg --files "ProjectBootstrapFramework/templates" -g "*.template.md" | wc -l | tr -d ' ')" = "8" && \
-test "$(rg --files "ProjectBootstrapFramework/prompts/reviews" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
-test "$(rg --files "ProjectBootstrapFramework/Agents" -g "*.md" | wc -l | tr -d ' ')" = "5" && \
-rg -q "Final status: PASS" "ProjectBootstrapFramework/validation/VALIDATION_REPORT.md" && \
+test "$(rg --files "NoirFrame/templates" -g "*.template.md" | wc -l | tr -d ' ')" = "8" && \
+test "$(rg --files "NoirFrame/prompts/reviews" -g "*.review.md" | wc -l | tr -d ' ')" = "8" && \
+test "$(rg --files "NoirFrame/Agents" -g "*.md" | wc -l | tr -d ' ')" = "5" && \
+rg -q "Final status: PASS" "NoirFrame/validation/VALIDATION_REPORT.md" && \
 ! rg -i "dar al-funoon\|hyperpay\|content editor\|store & bookings manager" \
-  "ProjectBootstrapFramework/FRAMEWORK_SPEC.md" \
-  "ProjectBootstrapFramework/FRAMEWORK_MANIFEST.md" \
-  "ProjectBootstrapFramework/PLACEHOLDER_SPEC.md" \
-  "ProjectBootstrapFramework/GENERATION_GUIDE.md" \
-  "ProjectBootstrapFramework/VALIDATION.md" \
-  "ProjectBootstrapFramework/README.md" \
-  "ProjectBootstrapFramework/templates" \
-  "ProjectBootstrapFramework/prompts" \
-  "ProjectBootstrapFramework/Agents"
+  "NoirFrame/FRAMEWORK_SPEC.md" \
+  "NoirFrame/FRAMEWORK_MANIFEST.md" \
+  "NoirFrame/PLACEHOLDER_SPEC.md" \
+  "NoirFrame/GENERATION_GUIDE.md" \
+  "NoirFrame/VALIDATION.md" \
+  "NoirFrame/README.md" \
+  "NoirFrame/templates" \
+  "NoirFrame/prompts" \
+  "NoirFrame/Agents"
 ```
 
 Expected: exit code `0`. If a prohibited term appears only in `ANALYSIS.md` or `FRAMEWORK_EXTRACTION.md`, narrow the leakage scan to normative Core, templates, prompts, and Agents rather than deleting source-analysis evidence.
