@@ -4,14 +4,105 @@
 
 Generate a project engineering knowledge base from requirements while preserving evidence, canonical ownership, explicit uncertainty, human readability, and tool neutrality.
 
-## Start Here
+## Use This Framework
 
-1. Read `FRAMEWORK_SPEC.md`.
-2. Confirm versions in `FRAMEWORK_MANIFEST.md`.
-3. Normalize `<Requirements Document>` into `TRACEABILITY.md`.
-4. Follow `GENERATION_GUIDE.md` to generate the Project Knowledge Base.
-5. For every document run mechanical validation, its review prompt, repair, and revalidation.
-6. Use `VALIDATION_REPORT.md` to record the run and regeneration impact.
+You need one source document that describes the project. It can be a PDF, DOCX,
+Markdown file, text file, or another format an AI agent can read. Its filename
+does not matter: `client-brief.pdf`, `product-spec.md`, and
+`discovery-notes.docx` are all valid inputs.
+
+The current framework is AI-guided: an agent reads the source document and
+uses the templates and prompts to generate the knowledge base. It is not a
+one-command PDF parser.
+
+### 1. Add the source document
+
+Put the source document in your new repository, for example:
+
+```text
+my-project/
+├── client-brief.pdf
+└── ProjectBootstrapFramework/
+```
+
+### 2. Create an output folder
+
+Create `docs/knowledge-base/`. The generated documentation belongs there, not
+inside the framework folder.
+
+```text
+my-project/
+├── client-brief.pdf
+├── ProjectBootstrapFramework/
+└── docs/
+    └── knowledge-base/
+```
+
+### 3. Give an AI agent the bootstrap instruction
+
+Replace `<source-document>` with the path to your actual file:
+
+```text
+Read ProjectBootstrapFramework/README.md, FRAMEWORK_SPEC.md,
+FRAMEWORK_MANIFEST.md, PLACEHOLDER_SPEC.md, GENERATION_GUIDE.md, VALIDATION.md,
+all templates, and all prompts.
+
+Use <source-document> as the only project-specific source.
+
+Initialize docs/knowledge-base/TRACEABILITY.md from the traceability template.
+Assign RQ IDs and source locators. Stop and ask questions for blocking gaps.
+
+Then generate and review, in order:
+1. PROJECT.md
+2. BUSINESS_RULES.md
+3. DECISIONS.md
+4. API.md
+5. REFERENCE.md
+6. TESTING.md
+7. FEATURE_CHECKLIST.md
+8. TRACEABILITY.md finalization
+
+Use the matching template, generator prompt, and review prompt for every
+document. Validate, review, repair only supported issues, then revalidate.
+
+Never invent project facts. Mark unsupported concerns as Not Applicable or
+raise a blocking question. Write the output to docs/knowledge-base/.
+```
+
+### 4. Review the generated output
+
+The output should contain:
+
+```text
+docs/knowledge-base/
+├── PROJECT.md
+├── BUSINESS_RULES.md
+├── DECISIONS.md
+├── API.md
+├── REFERENCE.md
+├── TESTING.md
+├── FEATURE_CHECKLIST.md
+├── TRACEABILITY.md
+└── validation/
+    └── VALIDATION_REPORT.md
+```
+
+Do not treat a generated file as automatically correct. Review the validation
+report, resolve blocking questions with the project stakeholder, then rerun
+affected generators.
+
+### 5. Use the knowledge base during development
+
+Give coding agents `Agents/SYSTEM.md` plus the role instruction that matches
+their task:
+
+- `IMPLEMENT.md` for feature work;
+- `REVIEW.md` for implementation review;
+- `TEST.md` for test work;
+- `CHANGE.md` for requirement or documentation changes.
+
+Those agents should use your generated `docs/knowledge-base/` files as the
+project's source of truth.
 
 ## Framework Core
 
